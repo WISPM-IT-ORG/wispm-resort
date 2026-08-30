@@ -1,45 +1,54 @@
 import { createClient } from '@/utils/supabase/server'
-import { Fragment } from 'react/jsx-runtime'
+import RoomCard from '@/components/RoomCard'
+import SearchSortBar from '@/components/SearchSortBar'
 
-export default async function HomePage() {
+type SearchParams = { search?: string; sort?: string }
+
+export default async function HomePage({
+  searchParams,
+}: {
+  searchParams: Promise<SearchParams>
+}) {
+  const { search, sort } = await searchParams
   const supabase = await createClient()
 
-  const { data: rooms, error } = await supabase
+  let query = supabase
     .from('rooms')
     .select(`
-      id,
-      room_type,
-      room_no,
-      bed_size,
-      capacity,
-      price_per_night,
-      status,
+      id, 
+      room_type, 
+      room_no, 
+      bed_size, 
+      capacity, 
+      price_per_night, 
+      status, 
       image,
-      categories (id, name, short_description )
-      `)
+      categories ( id, name, short_description )
+    `)
 
+    if (search) {
+      query = query.ilike('room_type', `%${search}%`)
+    }
+
+    if (sort === 'status') {
+      query = query.order('status', { ascending: true })
+    }
+
+    const { data: rooms, error } = await query
+    
   if (error) {
     console.log('Supabase error:', JSON.stringify(error, null, 2))
     return <pre>Error: {JSON.stringify(error, null, 2)}</pre>
   }
 
-  console.log(JSON.stringify(rooms[0], null, 2))
-
   return (
-    <div>
-      <h1>Rooms ({rooms.length})</h1>
-      <ul>
-        {rooms.map((room) => (
-          <Fragment key={room.id}>
-            <li>
-              {room.room_type} — {room.status} - {room.categories?.name}
-            </li>
-            <li>
-              {room.room_no} - This is the room number
-            </li>
-            </Fragment>
-        ))}
-          </ul>
-    </div>
+<main className='max-w-7xl mx-auto px-4 py-8'>
+  <SearchSortBar />
+  <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8'>
+    {rooms.map((room) => (
+      <RoomCard key={room.id} room={room} />
+    ))}
+  </div>
+</main>
   )
 }
