@@ -1,0 +1,62 @@
+[
+  {
+    "id": "single-room",
+    "name": "Single Room",
+    "room_count": 15,
+    "capacity": "1 person",
+    "bed_config": "1 x 6x6 bed (some as 4x6 double bunk)",
+    "privacy": "Fully Private or Common Facilities",
+    "short_description": "Cozy single occupancy room with a 6x6 bed. Private or shared facilities available.",
+    "full_description": "The Single Room is designed for solo guests seeking a comfortable, no-frills stay. Each room comes with one 6x6 bed (a small number of units use a 4x6 double bunk instead). Fifteen rooms fall under this category, spread across the Hospital Complex, Admin Block, and other wings. Facilities vary by room — some offer fully private bathrooms, while others share common facilities with nearby rooms. Ideal for individual travelers or staff who value personal space without needing extra room."
+  },
+  {
+    "id": "couple-solo-room",
+    "name": "Couple / Solo Room",
+    "room_count": 5,
+    "capacity": "1 person or a couple",
+    "bed_config": "1 x 6x6 bed",
+    "privacy": "Private / Fully Private",
+    "short_description": "Intimate room for one or two guests, with a private 6x6 bed and dedicated facilities.",
+    "full_description": "The Couple/Solo Room suits either a single guest or a couple sharing one bed. Each of the 5 rooms in this category features a 6x6 bed and comes with private facilities — either a fully private bathroom or a dedicated private room setup. Found mainly in the Drivers' Lounge and Toilet Roll Complex areas, these rooms offer a quieter, more personal stay for guests not needing a large family or group space."
+  },
+  {
+    "id": "family-room",
+    "name": "Family Room",
+    "room_count": 5,
+    "capacity": "Family (multiple persons)",
+    "bed_config": "1-2 x 6x6 beds",
+    "privacy": "Private Room or Fully Private",
+    "short_description": "Spacious room for families, with one or two large 6x6 beds and private facilities.",
+    "full_description": "The Family Room is built for guests traveling with family, offering either one or two 6x6 beds depending on the unit. All 5 rooms in this category are located within the Hospital Complex and provide either a fully private bathroom or a dedicated private room. This category balances space and privacy, making it a comfortable option for parents with children or small family groups."
+  },
+  {
+    "id": "double-room",
+    "name": "Double Room",
+    "room_count": 5,
+    "capacity": "2 persons",
+    "bed_config": "2 x 6x6 beds",
+    "privacy": "Fully Private or Common Facilities",
+    "short_description": "Two-bed room for double occupancy, with private or shared facilities.",
+    "full_description": "The Double Room is fitted with two 6x6 beds, making it suitable for two guests sharing a room while keeping separate beds. There are 5 rooms in this category, located across the Hospital Complex and Family Apartment wing. Facilities differ by room: some offer fully private bathrooms, while others share common facilities. A practical choice for pairs of colleagues, friends, or family members traveling together."
+  },
+  {
+    "id": "group-dorm-6-8",
+    "name": "Group Dorm (6–8 Persons)",
+    "room_count": 12,
+    "capacity": "6 to 8 persons",
+    "bed_config": "3-4 x 4x6 double bunk beds",
+    "privacy": "Common Facilities (one unit has private A/C toilets/showers)",
+    "short_description": "Shared dorm-style room for 6-8 guests, fitted with double bunk beds.",
+    "full_description": "The Group Dorm (6-8 Persons) category is designed for larger groups needing shared accommodation. Each of the 12 rooms is fitted with 3 to 4 double bunk beds (4x6 size), accommodating between 6 and 8 people per room. Most rooms use common facilities shared with the rest of the wing, though one room stands out with private, air-conditioned toilets and showers. These rooms are spread across the Drivers' Lounge, Admin Block, and Hospital Complex, and are well suited for staff groups, volunteers, or same-sex group bookings (some rooms are designated as Sisters' or Brothers' rooms)."
+  },
+  {
+    "id": "large-dorm-10",
+    "name": "Large Dorm (10 Persons)",
+    "room_count": 5,
+    "capacity": "10 persons",
+    "bed_config": "5 x 4x6 double bunk beds",
+    "privacy": "Common Facilities",
+    "short_description": "Large shared dorm for up to 10 guests, with double bunk beds and shared facilities.",
+    "full_description": "The Large Dorm (10 Persons) category offers the highest-capacity shared accommodation, with 5 double bunk beds (4x6 size) fitted into each room to sleep up to 10 guests. There are 5 rooms in this category, all located within the Hospital Complex. All rooms share common facilities. This option is best suited for large groups, teams, or bulk bookings where guests are comfortable sharing sleeping and bathroom spaces."
+  }
+]
