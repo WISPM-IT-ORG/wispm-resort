@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { CartProvider } from '@/context/CartContext'
 import { Roboto_Slab, Roboto, Roboto_Flex } from 'next/font/google'
+import { Toaster } from 'react-hot-toast'
 import "./globals.css";
 
 const robotoSlab = Roboto_Slab({
@@ -26,7 +28,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${robotoSlab.variable} ${roboto.variable} ${robotoFlex.variable}`}>
-      <body>{children}</body>
+      <body>
+        <CartProvider>{children}</CartProvider>
+        <Toaster position="top-center" />
+      </body>
     </html>
   )
 }

@@ -49,6 +49,7 @@ export type Database = {
       }
       rooms: {
         Row: {
+          available_slots: number
           bed_size: string | null
           capacity: string | null
           category_id: string | null
@@ -62,8 +63,10 @@ export type Database = {
           room_type: string
           sn: number | null
           status: string
+          total_slots: number
         }
         Insert: {
+          available_slots?: number
           bed_size?: string | null
           capacity?: string | null
           category_id?: string | null
@@ -77,8 +80,10 @@ export type Database = {
           room_type: string
           sn?: number | null
           status?: string
+          total_slots?: number
         }
         Update: {
+          available_slots?: number
           bed_size?: string | null
           capacity?: string | null
           category_id?: string | null
@@ -92,6 +97,7 @@ export type Database = {
           room_type?: string
           sn?: number | null
           status?: string
+          total_slots?: number
         }
         Relationships: [
           {

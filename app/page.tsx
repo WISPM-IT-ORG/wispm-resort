@@ -33,6 +33,8 @@ export default async function HomePage({
       price_per_night, 
       status, 
       image,
+      total_slots, 
+      available_slots,
       categories ( id, name, short_description )
     `)
 
