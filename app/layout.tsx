@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CartProvider } from '@/context/CartContext'
+import Navbar from "@/components/Navbar"
 import { Roboto_Slab, Roboto, Roboto_Flex } from 'next/font/google'
 import { Toaster } from 'react-hot-toast'
 import "./globals.css";
@@ -29,7 +30,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${robotoSlab.variable} ${roboto.variable} ${robotoFlex.variable}`}>
       <body>
-        <CartProvider>{children}</CartProvider>
+        <CartProvider>
+          <Navbar />
+          {children}
+        </CartProvider>
         <Toaster position="top-center" />
       </body>
     </html>
