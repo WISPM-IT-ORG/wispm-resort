@@ -15,7 +15,7 @@ export default async function PaymentPage({
 
   const { data: bookings, error } = await supabase
     .from('bookings')
-    .select('id, quantity, total_amount, rooms ( room_type )')
+    .select('id, room_id, quantity, total_amount, rooms ( room_type )')
     .in('id', bookingIds)
     .eq('status', 'pending_payment')
 
@@ -41,7 +41,9 @@ export default async function PaymentPage({
           <span>₦{grandTotal.toLocaleString()}</span>
         </div>
 
-        <PaymentActions bookingIds={bookingIds} />
+        <PaymentActions
+          bookings={bookings.map((b) => ({ bookingId: b.id, roomId: b.room_id }))}
+        />
       </div>
     </main>
   )
