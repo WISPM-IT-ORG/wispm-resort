@@ -14,6 +14,53 @@ export type Database = {
   }
   public: {
     Tables: {
+      bookings: {
+        Row: {
+          created_at: string | null
+          id: string
+          payment_reference: string | null
+          payment_status: string
+          price_per_night: number | null
+          quantity: number
+          room_id: string
+          status: string
+          total_amount: number | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          payment_reference?: string | null
+          payment_status?: string
+          price_per_night?: number | null
+          quantity: number
+          room_id: string
+          status?: string
+          total_amount?: number | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          payment_reference?: string | null
+          payment_status?: string
+          price_per_night?: number | null
+          quantity?: number
+          room_id?: string
+          status?: string
+          total_amount?: number | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "bookings_room_id_fkey"
+            columns: ["room_id"]
+            isOneToOne: false
+            referencedRelation: "rooms"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       categories: {
         Row: {
           bed_config: string | null
@@ -114,7 +161,19 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      book_room: {
+        Args: { p_quantity: number; p_room_id: string; p_user_id: string }
+        Returns: {
+          booking_id: string
+          message: string
+          success: boolean
+        }[]
+      }
+      confirm_booking_payment: {
+        Args: { p_booking_id: string; p_reference: string }
+        Returns: boolean
+      }
+      release_booking: { Args: { p_booking_id: string }; Returns: boolean }
     }
     Enums: {
       [_ in never]: never
