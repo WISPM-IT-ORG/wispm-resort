@@ -16,7 +16,7 @@ export type Database = {
     Tables: {
       bookings: {
         Row: {
-          created_at: string | null
+          created_at: string
           id: string
           payment_reference: string | null
           payment_status: string
@@ -28,7 +28,7 @@ export type Database = {
           user_id: string
         }
         Insert: {
-          created_at?: string | null
+          created_at?: string
           id?: string
           payment_reference?: string | null
           payment_status?: string
@@ -40,7 +40,7 @@ export type Database = {
           user_id: string
         }
         Update: {
-          created_at?: string | null
+          created_at?: string
           id?: string
           payment_reference?: string | null
           payment_status?: string

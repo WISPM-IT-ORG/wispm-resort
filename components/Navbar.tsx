@@ -15,11 +15,12 @@ export default async function Navbar() {
         <a href="/cart">Cart</a>
 
         {user ? (
-          <form action={logout}>
-            <button type="submit" className="text-primary">
-              Log out ({user.email})
-            </button>
-          </form>
+          <>
+            <a href="/bookings">My Bookings</a>
+            <form action={logout}>
+              <button type="submit" className="text-primary">Log out ({user.email})</button>
+            </form>
+          </>
         ) : (
           <a href="/login" className="text-primary">Log in</a>
         )}
